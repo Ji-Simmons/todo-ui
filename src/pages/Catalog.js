@@ -1,5 +1,5 @@
 import React, { Component as RC } from 'react';
-import '../App.scss';
+
 import axios from 'axios';
 import '../App.scss';
 import Navigation from '../components/Navigation/Navigation';
@@ -7,23 +7,23 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 
-export default class Blog extends RC {
+export default class Catalog extends RC {
     state = {
-        history: [],
+        terms: [],
         isLoading: true,
         errors: null
     };
-    getHistory() {
+    getterms() {
         axios
-       // This is where the data is hosted When local because Conni said so
-            //.get('http://localhost:5555/api/boats')
+       // This is where the data is hosted When local
+            .get('http://localhost:5555/api/terms')
             // when it's live:
-            .get('https://blog-api1.herokuapp.com/') 
+            //.get('https://blog-api1.herokuapp.com/') 
         // Once we get a response and store data, let's change the loading state
         .then(response => {
             console.log(response);
           this.setState({
-            history: response.data,
+            terms: response.data,
             isLoading: false
           });
         })
@@ -31,26 +31,30 @@ export default class Blog extends RC {
         .catch(error => this.setState({ error, isLoading: false }));
     }
     componentDidMount() {
-        this.getHistory();
+        this.getterms();
     }
     render() {
-        const { isLoading, history } = this.state;
+        const { isLoading, terms } = this.state;
             return ( 
                 <React.Fragment> 
-                    <Navigation />
                     <Header />
-                    
+            <Navigation />
+            
                     <div className="App">       
                         {!isLoading ? (
-                            history.map(history => {
-                                const { _id, title, author, date, copy } = history;
+                            terms.map(terms => {
+                                const { _id, term, definition, link, title } = terms;
                                 return (
                                     <div className="background" key={_id}>
                                         
-                                        <h1 className="title">{title}</h1>
-                                        <h2 className="author">Posted by: {author}</h2>
-                                        <h2 className="date">{date}</h2>
-                                        <h2 className="copy">{copy}</h2>
+                                        <div className="term"> {term}:</div>
+                                        <div className="definition"> {definition}</div><br />
+                                        <div className="resource" >
+                                        <a href={link} target="_blank">{title}</a>
+                                        </div>
+                                        <div>
+                                        <button onClick={this.editItem}>Edit entry</button>
+                                        </div>
                                         <hr />
                                      
                                         
@@ -58,7 +62,7 @@ export default class Blog extends RC {
                                 );
                             })
                         ) : (
-                            <p>Loading . . .</p>
+                            <p>Chill, bro . . .</p>
                         )}
                         <Footer />
                     

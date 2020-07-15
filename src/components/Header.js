@@ -1,7 +1,4 @@
 import React, {Component as RC} from 'react';
-import Logo from './Logo';
-import Navigation from './Navigation/Navigation';
-
 
 export class Simple extends RC {
     render()
@@ -19,8 +16,10 @@ export default class Header extends RC {
     {
         return(
             <header className="main-header">
-                <Logo />
-                <Navigation />
+                <div>
+                    <h1>Term glossary</h1>
+                </div>
+                
                
             </header>
         )

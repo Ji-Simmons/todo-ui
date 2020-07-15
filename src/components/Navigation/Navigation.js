@@ -1,6 +1,6 @@
 import React, {Component as RC} from 'react';
 import {Link} from 'react-router-dom';
-import './Navigation.css';
+// import './Navigation.css';
 import navStructure from './navStructure';
 
 class NavList extends RC{

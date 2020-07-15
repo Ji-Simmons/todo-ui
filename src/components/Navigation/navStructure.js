@@ -1,41 +1,13 @@
 export default [
     {
-        label: 'Home',
-        route: '/Home',
+        label: 'Input',
+        route: '/Input',
     },
     {
-        label: 'Blog',
-        route: '/Blog',
+        label: 'Catalog',
+        route: '/Catalog',
     },
-    {
-        label: 'About Us',
-        route: '/AboutUs',
-    },
-    {
-        label: 'M/V Snowdrift',
-        children: [
-            {
-                label: 'Specs',
-                route: '/Specs',
-            },
-            {
-                label: 'Pictures',
-                route: '/Pictures',
-            },
-            {
-                label: 'Performance',
-                route: '/Performance',
-            }
-        ]
-    },
-    {
-        label: 'Our Gear',
-        route: '/Gear',
-    },
-    {
-        label: 'Boat Comparison',
-        route: '/Boats',
-    },
+    
     
     
     

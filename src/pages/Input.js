@@ -1,9 +1,11 @@
 import React, {Component as RC} from 'react';
 import Page from '../components/Page';
-import '../components/Post.css';
 import axios from 'axios';
+import Navigation from '../components/Navigation/Navigation';
+import Header from '../components/Header';
 
-export default class Post extends RC {
+
+export default class Input extends RC {
     constructor(props)
     {
         super(props);
@@ -16,18 +18,20 @@ export default class Post extends RC {
 
     handleSubmit(e){
         e.preventDefault();
-        const author = document.getElementById('author').value;
+        const term = document.getElementById('term').value;
+        const definition = document.getElementById('definition').value;
+        const link = document.getElementById('link').value;
         const title = document.getElementById('title').value;
-        const date = document.getElementById('date').value;
-        const copy = document.getElementById('copy').value;
+        
         axios({
         method: "POST", 
-        url:"http://localhost:5555/api/history", 
+        url:"http://localhost:5555/api/terms", 
         data: {
-        author: author,
-        date: date,
+        term: term,
+        definition: definition,
+        link: link,
         title: title,
-        copy: copy, 
+         
         
         }
         }).then((response)=>{
@@ -37,32 +41,29 @@ export default class Post extends RC {
         } else if (response.data.msg === 'fail') {
         alert("Fix your shit.")
         }
-        })
+        }).then(e.target.reset());
         }
         
-        resetForm(){
-        document.getElementById('history').reset();
-        }
+        
         
     render()
     {
         return(
-            <div className="post"> 
+            <div> 
+            <Header />
+            <Navigation />
+                    
             <Page>
                 
-                <form id="history" onSubmit={this.handleSubmit.bind(this)} method="POST">
-                <div onChange={this.onChangeValue}>
-                <p />
-                <select id="author">
-                    <option value="Conni">Conni</option>
-                    <option value="Ji">Ji</option>
-                </select>
-                </div>
+                <form id="terms" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                
            
                
-        <textarea id="date" rows="1" cols="50" placeholder="Todays date"></textarea><br />
-        <textarea id="title" rows="1" cols="100" placeholder="Title of the post"></textarea><br />
-        <textarea id="copy" rows="10" cols="100" placeholder="Start typing!"></textarea>
+        
+        <textarea id="term" rows="1" cols="100" placeholder="term to be defined" required></textarea><br />
+        <textarea id="definition" rows="1" cols="100" placeholder="definition of term" required></textarea><br />
+        <textarea id="link" rows="1" cols="100" placeholder="link to resource"></textarea><br />
+        <textarea id="title" rows="1" cols="100" placeholder="name the link"></textarea><br />
                 
                 <p>
                     <button type="submit" value="Create" >Send it!</button></p>

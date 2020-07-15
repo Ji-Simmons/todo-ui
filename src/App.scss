@@ -1,111 +1,26 @@
-.logo {
-  font-weight: 900;
-  font-size: 3em;
-  font-family: "Open Sans", sans-serif;
-  background-clip: text;
-  color: transparent;
-  
-}
-
-.page-wrapper {
-  background: url("https://previews.123rf.com/images/szilardszasztoth/szilardszasztoth1603/szilardszasztoth160300004/54214989-paradise-beach-on-eleuthera-bahamas-with-crystal-clear-water-.jpg") no-repeat fixed;
-  background-size: cover;
-  display: flex;
-  flex-flow: column;
-  height: 100vh;
-  margin-top: 60px;
-}
-
-.main-header {
-  display: flex;
-  flex-flow: row;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: black;
-  
-}
-
-
-.content {
-  flex: 1;
-  padding-top: 45px;
-}
-
 .main-footer {
   background: #000;
   text-align: center;
   color: #fff;
 }
 
-// blog.css stuff below
-* .App {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  background-image: url("https://previews.123rf.com/images/szilardszasztoth/szilardszasztoth1603/szilardszasztoth160300004/54214989-paradise-beach-on-eleuthera-bahamas-with-crystal-clear-water-.jpg");
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-display: flex;
-flex-flow: column;
-}
-
-.background {
-  margin: 40px 800px 40px 20px;
-  border: 2px solid black;
-  border-radius: 40px;
-  padding: 25px;
-  background: rgba(255,255,255, 0.4);
-  text-align: justify;
-  
-}
-
-.title {
-  text-align: center;
-}
-
-// Gear css stuff below
-
-
-// Boat comparison css stuff below
-
-.t0 {
-  margin: 40px 800px 40px 20px;
-  border: 2px solid black;
-  border-radius: 40px;
-  padding: 25px;
-  background: rgba(255,255,255, 0.4);
-  
-  
-}
-
-.picture {
-  max-width: 640px;
-  height: auto;
-  justify-content: left;
-  border: 2px solid black;
-  border-radius: 25px;
-}
-
-.t1 {
+.term {
   font-size: 20px;
+  text-indent: 140px;
   font-style: italic;
   font-weight: bold;
   text-align: left;
 }
 
-.t2 {
+.definition {
   font-size: 19px;
-  text-indent: 80px;
+  text-indent: 180px;
   text-align: left;
-  border-bottom: 1px solid blue;
-  position: relative;
+  border-radius: 50px;
 }
 
-.border {
-  border-bottom: 1px solid blue;
-  position: relative;
-  left: 0;
-  right: 50%;
+.resource {
+  font-size: 20px;
+  text-indent: 200px;
+  text-align: left;
 }
