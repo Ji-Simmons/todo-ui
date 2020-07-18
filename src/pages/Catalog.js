@@ -18,7 +18,7 @@ export default class Catalog extends RC {
        // This is where the data is hosted When local
             .get('http://localhost:5555/api/terms')
             // when it's live:
-            //.get('https://blog-api1.herokuapp.com/') 
+            //.get('https://term-catalog-api.herokuapp.com/') 
         // Once we get a response and store data, let's change the loading state
         .then(response => {
             console.log(response);
