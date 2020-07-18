@@ -39,12 +39,11 @@ class App extends Component {
             <Route exact path="/Input">
               <Input />
             </Route>
-            <Route exact path="/edit">
-              <MyForm />
-            </Route>
-            <Route exact path="/try">
+            <Route exact path="/Edit">
               <TryApp />
             </Route>
+            
+            
           </Switch>
       </Router>
     );

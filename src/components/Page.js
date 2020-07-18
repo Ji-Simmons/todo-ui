@@ -15,9 +15,9 @@ export default class Page extends RC {
             {this.props.banner}
             <main className="content">
                 {this.props.children}
-                
+                <Footer />
             </main>
-            <Footer />
+            
         </section>
         )
     }

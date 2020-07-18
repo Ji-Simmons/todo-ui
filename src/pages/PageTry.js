@@ -2,6 +2,9 @@ import React, { Component as RC } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MyForm from "./MyForm";
 import '../App.scss';
+import Navigation from '../components/Navigation/Navigation';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 
@@ -79,11 +82,17 @@ export default class TryApp extends RC {
     render()
     {
       return (
+        
         <div className="App">
+          <Header />
+         <Navigation />
+         
+          <h2>Click a term below to edit.</h2>
           <ul>
           {this.state.termsList}
           </ul>
           {this.state.editForm}
+          
         </div>
       )
     }

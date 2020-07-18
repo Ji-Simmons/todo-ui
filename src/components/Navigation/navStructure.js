@@ -1,19 +1,16 @@
 export default [
+    
     {
-        label: 'Input',
-        route: '/Input',
-    },
-    {
-        label: 'Catalog',
+        label: 'Catalog Of Terms',
         route: '/Catalog',
     },
     {
-        label: 'MyForm',
-        route: '/edit',
+        label: 'Submit A New Term',
+        route: '/Input',
     },
     {
-        label: 'TryApp',
-        route: '/try',
+        label: 'Edit An Existing Term',
+        route: '/Edit',
     },
     
     

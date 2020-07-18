@@ -52,8 +52,7 @@ export default class Catalog extends RC {
        {
             return ( 
                <div>
-                    <Header />
-          
+                   
             
             <form onSubmit={this.submitHandler}>
                 <label>Term:</label>
@@ -67,24 +66,24 @@ export default class Catalog extends RC {
                 <input
                 default value={this.state.definition}
                 onChange={this.changeHandler}
-                name="term"
+                name="definition"
                 />
                 <br />
                 <label>Link:</label>
                 <input
                 default value={this.state.link}
                 onChange={this.changeHandler}
-                name="term"
+                name="link"
                 />
                 <br />
                 <label>Title of Link:</label>
                 <input
                 default value={this.state.title}
                 onChange={this.changeHandler}
-                name="term"
+                name="title"
                 />
                 <br />
-              <input type='submit' value="I'm Done" />
+              <input type='submit' value="Submit" />
             </form>
                         <Footer />
                         </div>    

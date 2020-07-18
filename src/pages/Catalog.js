@@ -52,9 +52,7 @@ export default class Catalog extends RC {
                                         <div className="resource" >
                                         <a href={link} target="_blank">{title}</a>
                                         </div>
-                                        <div>
-                                        <button onClick={this.editItem}>Edit entry</button>
-                                        </div>
+                                        
                                         <hr />
                                      
                                         
