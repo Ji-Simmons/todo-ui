@@ -56,11 +56,34 @@ export default class Catalog extends RC {
           
             
             <form onSubmit={this.submitHandler}>
+                <label>Term:</label>
               <input
                 default value={this.state.term}
                 onChange={this.changeHandler}
                 name="term"
                 />
+                <br />
+                <label>Definition:</label>
+                <input
+                default value={this.state.definition}
+                onChange={this.changeHandler}
+                name="term"
+                />
+                <br />
+                <label>Link:</label>
+                <input
+                default value={this.state.link}
+                onChange={this.changeHandler}
+                name="term"
+                />
+                <br />
+                <label>Title of Link:</label>
+                <input
+                default value={this.state.title}
+                onChange={this.changeHandler}
+                name="term"
+                />
+                <br />
               <input type='submit' value="I'm Done" />
             </form>
                         <Footer />
