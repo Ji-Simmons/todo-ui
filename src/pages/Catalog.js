@@ -72,9 +72,3 @@ export default class Catalog extends RC {
              );
         }}
         
-        
-
-
-
-
-// set the db to add time stamps, and then use js to sort by stamp.

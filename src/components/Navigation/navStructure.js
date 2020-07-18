@@ -7,8 +7,14 @@ export default [
         label: 'Catalog',
         route: '/Catalog',
     },
-    
-    
+    {
+        label: 'MyForm',
+        route: '/edit',
+    },
+    {
+        label: 'TryApp',
+        route: '/try',
+    },
     
     
 ]
