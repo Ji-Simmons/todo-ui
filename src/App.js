@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Input from './pages/Input';
 import './App.scss';
 import Catalog from "./pages/Catalog";
-import MyForm from "./pages/MyForm";
+
 import TryApp from "./pages/PageTry";
 
 class App extends Component {

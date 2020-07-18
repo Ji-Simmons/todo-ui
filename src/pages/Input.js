@@ -24,8 +24,8 @@ export default class Input extends RC {
         const title = document.getElementById('title').value;
         
         axios({
-        method: "POST", 
-        url:"http://localhost:5555/api/terms", 
+        method: "POST", // https://github.com/Ji-Simmons/term-catalog-api/tree/master/api/terms
+        url:"https://github.com/Ji-Simmons/term-catalog-api/tree/master/api/terms", 
         data: {
         term: term,
         definition: definition,
