@@ -16,9 +16,9 @@ export default class Catalog extends RC {
     getterms() {
         axios
        // This is where the data is hosted When local
-            .get('http://localhost:5555/api/terms')
+            // .get('http://localhost:5555/api/terms')
             // when it's live:
-            //.get('https://term-catalog-api.herokuapp.com/') 
+            .get('https://term-catalog-api.herokuapp.com/') 
         // Once we get a response and store data, let's change the loading state
         .then(response => {
             console.log(response);
