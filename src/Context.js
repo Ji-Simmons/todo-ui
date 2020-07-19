@@ -9,5 +9,5 @@ export const MergedContext = React.createContext({});
 export const MenuContext = React.createContext('');
 
 export default {
-    apiPath: 'http://localhost5555/api/tasks'
+    apiPath: 'http://localhost:5555/api/tasks'
 };
