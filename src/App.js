@@ -45,7 +45,9 @@ class App extends Component {
             <Route exact path="/TestForm">
               <TestForm />
             </Route>
-            
+            <Route exact path="/TestForm2">
+              <TestForm2 />
+            </Route>
             
             
           </Switch>
