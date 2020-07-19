@@ -11,11 +11,10 @@ export default class Catalog extends RC {
     constructor(props) {
         super(props);
     this.state = {
-        terms: [],
-        term: props.term,
-        definition: props.definition,
-        link: props.link,
-        title: props.title,
+        tasks: [],
+        task: props.task,
+        date: props.date,
+        
         isLoading: true,
         errors: null
     };
@@ -30,14 +29,14 @@ export default class Catalog extends RC {
             method: 'PUT',
             body: JSON.stringify(this.state),
           }
-          fetch(`http://localhost:5555/api/terms/${id}`, fetchOptions)
+          fetch(`http://localhost:5555/api/tasks/${id}`, fetchOptions)
           .then((response) =>
           {
             return response.json()
           })
           .then((data) =>
           {
-            this.props.getTerms();
+            this.props.getTasks();
           })
           .catch();
         }
@@ -55,34 +54,21 @@ export default class Catalog extends RC {
                    
             
             <form onSubmit={this.submitHandler}>
-                <label>Term:</label>
+                <label>Task:</label>
               <input
-                default value={this.state.term}
+                default value={this.state.task}
                 onChange={this.changeHandler}
-                name="term"
+                name="task"
                 />
                 <br />
-                <label>Definition:</label>
+                <label>Date:</label>
                 <input
-                default value={this.state.definition}
+                default value={this.state.date}
                 onChange={this.changeHandler}
-                name="definition"
+                name="date"
                 />
                 <br />
-                <label>Link:</label>
-                <input
-                default value={this.state.link}
-                onChange={this.changeHandler}
-                name="link"
-                />
-                <br />
-                <label>Title of Link:</label>
-                <input
-                default value={this.state.title}
-                onChange={this.changeHandler}
-                name="title"
-                />
-                <br />
+                
               <input type='submit' value="Submit" />
             </form>
                         <Footer />

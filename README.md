@@ -1,4 +1,4 @@
-https://github.com/Ji-Simmons/term-catalog-ui
+https://github.com/Ji-Simmons/task-catalog-ui
 
 
 
@@ -76,5 +76,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 # blog-ui
 # blog-ui
 # blog-ui1
-# term-glossary
-# term-catalog-ui
+# task-glossary
+# task-catalog-ui
+# todo-ui

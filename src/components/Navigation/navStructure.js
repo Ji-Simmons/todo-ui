@@ -1,15 +1,15 @@
 export default [
     
     {
-        label: 'Catalog Of Terms',
+        label: 'Catalog Of Tasks',
         route: '/Catalog',
     },
     {
-        label: 'Submit A New Term',
+        label: 'Submit A New Task',
         route: '/Input',
     },
     {
-        label: 'Edit An Existing Term',
+        label: 'Edit An Existing Task',
         route: '/Edit',
     },
     

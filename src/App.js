@@ -39,9 +39,6 @@ class App extends Component {
             <Route exact path="/Input">
               <Input />
             </Route>
-            <Route exact path="/Edit">
-              <TryApp />
-            </Route>
             
             
           </Switch>

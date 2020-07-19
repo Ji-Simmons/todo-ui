@@ -69,7 +69,7 @@ class NavItem extends RC {
         let submenu = null;
         let item;
 
-        // determine if this nav item has children
+        // detaskine if this nav item has children
         // if so, it should get a sub menu
         if (this.props.children)
         {

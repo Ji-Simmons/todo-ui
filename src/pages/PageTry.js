@@ -13,14 +13,14 @@ export default class TryApp extends RC {
     {
       super();
       this.state = {
-        terms: [],
-        termsList: [],
+        tasks: [],
+        tasksList: [],
         editForm: '',
       }
     }
-    getTerms = () =>
+    getTasks = () =>
     {
-      fetch('http://localhost:5555/api/terms')
+      fetch('http://localhost:5555/api/tasks')
       .then((response) =>
       {
         return response.json()
@@ -29,47 +29,47 @@ export default class TryApp extends RC {
       {
         console.log('data from api: ', data);
         this.setState({
-          terms: data,
-          termsList: data.map((item) =>
+          tasks: data,
+          tasksList: data.map((item) =>
           {
             return <li 
                       key={item._id}
                       id={item._id}
-                      onClick={this.updateTerms}
-                      >{item.term || "Unknown"}</li>
+                      onClick={this.updateTasks}
+                      >{item.task || "Unknown"}</li>
           }),
           editForm: ''
         })
       })
       .catch();
     }
-    updateTerms = (event) =>
+    updateTasks = (event) =>
     {
       // this is the id of the item i want to update
-      //console.log('all termss: ', this.state.termss);
+      //console.log('all taskss: ', this.state.taskss);
       const id = event.target.getAttribute('id');
       const stupidFind = (id) =>
       {
-        for (let i = 0; i < this.state.terms.length; i++)
+        for (let i = 0; i < this.state.tasks.length; i++)
         {
-          let terms = this.state.terms[i];
-          if (terms._id === id)
+          let tasks = this.state.tasks[i];
+          if (tasks._id === id)
           {
-            return terms;
+            return tasks;
           }
         }
         return null;
       }
-      let thisTerms = stupidFind(id);
-      //thisTerms = thisTerms[0];
-      //console.log('thisTerms: ', thisTerms);
+      let thisTasks = stupidFind(id);
+      //thisTasks = thisTasks[0];
+      //console.log('thisTasks: ', thisTasks);
       //console.log('id: ', id);
       this.setState({
         editForm: ''
       }, function()
       {
         this.setState({
-          editForm: <MyForm {...thisTerms} getTerms={this.getTerms} />
+          editForm: <MyForm {...thisTasks} getTasks={this.getTasks} />
         })
       });
   
@@ -77,7 +77,7 @@ export default class TryApp extends RC {
     }
     componentDidMount()
     {
-      this.getTerms();
+      this.getTasks();
     }
     render()
     {
@@ -87,9 +87,9 @@ export default class TryApp extends RC {
           <Header />
          <Navigation />
          
-          <h2>Click a term below to edit.</h2>
+          <h2>Click a task below to edit.</h2>
           <ul>
-          {this.state.termsList}
+          {this.state.tasksList}
           </ul>
           {this.state.editForm}
           

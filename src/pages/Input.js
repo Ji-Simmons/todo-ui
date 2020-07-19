@@ -18,19 +18,17 @@ export default class Input extends RC {
 
     handleSubmit(e){
         e.preventDefault();
-        const term = document.getElementById('term').value;
-        const definition = document.getElementById('definition').value;
-        const link = document.getElementById('link').value;
-        const title = document.getElementById('title').value;
+        const task = document.getElementById('task').value;
+        const date = document.getElementById('date').value;
+        
         
         axios({
-        method: "POST", // https://github.com/Ji-Simmons/term-catalog-api/tree/master/api/terms
-        url:"https://github.com/Ji-Simmons/term-catalog-api/tree/master/api/terms", 
+        method: "POST", 
+        url:"https://github.com/Ji-Simmons/todo-api/tree/master/api/tasks", 
         data: {
-        term: term,
-        definition: definition,
-        link: link,
-        title: title,
+        task: task,
+        date: date,
+        
          
         
         }
@@ -55,18 +53,17 @@ export default class Input extends RC {
                     
             <Page>
                 
-                <form id="terms" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                <form id="tasks" onSubmit={this.handleSubmit.bind(this)} method="POST">
                 
            
                
         
-        <textarea id="term" rows="1" cols="100" placeholder="term to be defined" required></textarea><br />
-        <textarea id="definition" rows="1" cols="100" placeholder="definition of term" required></textarea><br />
-        <textarea id="link" rows="1" cols="100" placeholder="link to resource"></textarea><br />
-        <textarea id="title" rows="1" cols="100" placeholder="name the link"></textarea><br />
+        <textarea id="task" rows="1" cols="100" placeholder="task to get done" required></textarea><br />
+        <textarea id="date" rows="1" cols="100" placeholder="date it must be done by" ></textarea><br />
+        
                 
                 <p>
-                    <button type="submit" value="Create" >Send it!</button></p>
+                    <button type="submit" value="Create" >Delegate it!</button></p>
                     </form>
             </Page>
             </div>

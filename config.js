@@ -1,3 +1,3 @@
 export default {
-    apiPath: 'https://term-catalog-api.herokuapp.com/'
+    apiPath: 'https://task-catalog-api.herokuapp.com/'
 };

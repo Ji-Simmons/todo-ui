@@ -9,21 +9,21 @@ import Footer from '../components/Footer';
 
 export default class Catalog extends RC {
     state = {
-        terms: [],
+        tasks: [],
         isLoading: true,
         errors: null
     };
-    getterms() {
+    gettasks() {
         axios
        // This is where the data is hosted When local
-            // .get('http://localhost:5555/api/terms')
+            .get('http://localhost:5555/api/tasks')
             // when it's live:
-            .get('https://term-catalog-api.herokuapp.com/') 
+            // .get('https://task-catalog-api.herokuapp.com/') 
         // Once we get a response and store data, let's change the loading state
         .then(response => {
             console.log(response);
           this.setState({
-            terms: response.data,
+            tasks: response.data,
             isLoading: false
           });
         })
@@ -31,10 +31,10 @@ export default class Catalog extends RC {
         .catch(error => this.setState({ error, isLoading: false }));
     }
     componentDidMount() {
-        this.getterms();
+        this.gettasks();
     }
     render() {
-        const { isLoading, terms } = this.state;
+        const { isLoading, tasks } = this.state;
             return ( 
                 <React.Fragment> 
                     <Header />
@@ -42,16 +42,14 @@ export default class Catalog extends RC {
             
                     <div className="App">       
                         {!isLoading ? (
-                            terms.map(terms => {
-                                const { _id, term, definition, link, title } = terms;
+                            tasks.map(tasks => {
+                                const { _id, task, date } = tasks;
                                 return (
                                     <div className="background" key={_id}>
                                         
-                                        <div className="term"> {term}:</div>
-                                        <div className="definition"> {definition}</div><br />
-                                        <div className="resource" >
-                                        <a href={link} target="_blank">{title}</a>
-                                        </div>
+                                        <div className="task"> {task}:</div>
+                                        <div className="date"> {date}</div><br />
+                                        
                                         
                                         <hr />
                                      
@@ -60,7 +58,7 @@ export default class Catalog extends RC {
                                 );
                             })
                         ) : (
-                            <p>Chill, bro . . .</p>
+                            <p>Chill, bro . . .  I got this.</p>
                         )}
                         <Footer />
                     
