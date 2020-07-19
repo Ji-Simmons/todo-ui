@@ -17,7 +17,7 @@ export default class Header extends RC {
         return(
             <header className="main-header">
                 <div>
-                    <h1>Task glossary</h1>
+                    <h1>Tasks to ruin your life.</h1>
                 </div>
                 
                

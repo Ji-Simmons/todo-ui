@@ -24,7 +24,7 @@ export default class Input extends RC {
         
         axios({
         method: "POST", 
-        url:"https://github.com/Ji-Simmons/todo-api/tree/master/api/tasks", 
+        url:"http://localhost:5555/api/tasks", 
         data: {
         task: task,
         date: date,

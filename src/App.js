@@ -4,7 +4,8 @@ import Input from './pages/Input';
 import './App.scss';
 import Catalog from "./pages/Catalog";
 
-import TryApp from "./pages/PageTry";
+
+import MyForm from "./pages/MyForm";
 
 class App extends Component {
   constructor() {
@@ -31,7 +32,7 @@ class App extends Component {
       <Router>
           <Switch>
             <Route exact path="/">
-            <Input />
+            <Catalog />
             </Route>
             <Route exact path="/Catalog">
               <Catalog />
