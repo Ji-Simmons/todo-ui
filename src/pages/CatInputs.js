@@ -1,7 +1,13 @@
 
 import PropTypes from 'prop-types';
-import React from "react"
-const CatInputs = (props) => {
+import React, { Component as RC } from 'react';
+
+class CatInputs extends RC {
+  constructor(props)
+    {
+        super(props);
+    }
+ const CatInputs = (props) => {
   return (
     props.cats.map((val, idx)=> {
       let catId = `cat-${idx}`, ageId = `age-${idx}`
@@ -29,6 +35,7 @@ const CatInputs = (props) => {
       )
     })
   )
+}
 }
 export default CatInputs
 

@@ -35,6 +35,8 @@ addCat = (e) => {
 handleSubmit = (e) => { e.preventDefault();
   const owner = document.getElementById('owner').value;
   const description = document.getElementById('description').value; 
+  const name = document.getElementById('name').value;
+  const age = document.getElementById('age').value; 
 
   axios({
     method: "POST", 
@@ -42,6 +44,8 @@ handleSubmit = (e) => { e.preventDefault();
     data: {
     owner: owner,
     description: description,
+    name: name,
+    age: age,
     
 
 }
