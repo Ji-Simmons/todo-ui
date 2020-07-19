@@ -43,12 +43,16 @@ export default class Catalog extends RC {
                     <div className="App">       
                         {!isLoading ? (
                             tasks.map(tasks => {
-                                const { _id, task, date } = tasks;
+                                const { _id, task, date, owner, description, name, age } = tasks;
                                 return (
                                     <div className="background" key={_id}>
                                         
                                         <div className="task"> {task}:</div>
                                         <div className="date"> {date}</div><br />
+                                        <div className="owner"> {owner}</div><br />
+                                        <div className="description"> {description}</div><br />
+                                        <div className="name"> {name}</div><br />
+                                        <div className="age"> {age}</div><br />
                                         
                                         
                                         <hr />

@@ -8,9 +8,10 @@ export default [
         label: 'Submit A New Task',
         route: '/Input',
     },
+    
     {
-        label: 'Edit An Existing Task',
-        route: '/Edit',
+        label: 'Test Form',
+        route: '/TestForm',
     },
     
     

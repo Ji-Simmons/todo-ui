@@ -31,6 +31,7 @@ export default class Input extends RC {
         
          
         
+        
         }
         }).then((response)=>{
         if (response.data.msg === 'success') {
@@ -58,7 +59,11 @@ export default class Input extends RC {
            
                
         
-        <textarea id="task" rows="1" cols="100" placeholder="task to get done" required></textarea><br />
+        <textarea id="task" rows="1" cols="100" placeholder="Name of person task is assigned to:" required></textarea><br />
+        <textarea id="date" rows="1" cols="100" placeholder="date it must be done by" ></textarea><br />
+        <textarea id="date" rows="1" cols="100" placeholder="date it must be done by" ></textarea><br />
+        <textarea id="date" rows="1" cols="100" placeholder="date it must be done by" ></textarea><br />
+        <textarea id="date" rows="1" cols="100" placeholder="date it must be done by" ></textarea><br />
         <textarea id="date" rows="1" cols="100" placeholder="date it must be done by" ></textarea><br />
         
                 
