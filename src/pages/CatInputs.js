@@ -1,112 +1,39 @@
-
+import React from 'react';
 import PropTypes from 'prop-types';
-import React, { Component as RC } from 'react';
 
-class CatInputs extends RC {
-  constructor(props)
-    {
-        super(props);
-    }
- const CatInputs = (props) => {
-  return (
-    props.cats.map((val, idx)=> {
-      let catId = `cat-${idx}`, ageId = `age-${idx}`
-      return (
-        <div key={idx}>
-          <label htmlFor={catId}>{`Cat #${idx + 1}`}</label>
-          <input
-            type="text"
-            name={catId}
-            data-id={idx}
-            id={catId}
-            value={props.cats[idx].name} 
-            className="name"
-          />
-          <label htmlFor={ageId}>Age</label>
-          <input
-            type="text"
-            name={ageId}
-            data-id={idx}
-            id={ageId}
-            value={props.cats[idx].age} 
-            className="age"
-          />
-        </div>
-      )
-    })
-  )
-}
-}
-export default CatInputs
-
-
-/* Form.js
-
-import React, { useState } from 'react';
-import CatInputs from './CatInputs';
-
-const Form = () => {
-    const [ownerState, setOwnerState] = useState({
-        owner: '',
-        description: '',
-    });
-
-    const handleOwnerChange = (e) => setOwnerState({
-        ...ownerState,
-        [e.target.name]: [e.target.value],
-    });
-
-    const blankCat = { name: '', age: '' };
-    const [catState, setCatState] = useState([
-        { ...blankCat },
-    ]);
-
-    const addCat = () => {
-        setCatState([...catState, { ...blankCat }]);
-    };
-
-    const handleCatChange = (e) => {
-        const updatedCats = [...catState];
-        updatedCats[e.target.dataset.idx][e.target.className] = e.target.value;
-        setCatState(updatedCats);
-    };
-
+const CatInputs = ({ idx, catState, handleCatChange }) => {
+    const catId = `name-${idx}`;
+    const ageId = `age-${idx}`;
     return (
-        <form>
-            <label htmlFor="owner">Owner</label>
+        <div key={`cat-${idx}`}>
+            <label htmlFor={catId}>{`Cat #${idx + 1}`}</label>
             <input
                 type="text"
-                name="owner"
-                id="owner"
-                value={ownerState.owner}
-                onChange={handleOwnerChange}
+                name={catId}
+                data-idx={idx}
+                id={catId}
+                className="name"
+                value={catState[idx].name}
+                onChange={handleCatChange}
             />
-            <label htmlFor="description">Description</label>
+            <label htmlFor={ageId}>Age</label>
             <input
                 type="text"
-                name="description"
-                id="description"
-                value={ownerState.description}
-                onChange={handleOwnerChange}
+                name={ageId}
+                data-idx={idx}
+                id={ageId}
+                className="age"
+                value={catState[idx].age}
+                onChange={handleCatChange}
             />
-            <input
-                type="button"
-                value="Add New Cat"
-                onClick={addCat}
-            />
-            {
-                catState.map((val, idx) => (
-                    <CatInputs
-                        key={`cat-${idx}`}
-                        idx={idx}
-                        catState={catState}
-                        handleCatChange={handleCatChange}
-                    />
-                ))
-            }
-            <input type="submit" value="Submit" />
-        </form>
+        </div>
     );
 };
 
-export default Form; */
+CatInputs.propTypes = {
+    idx: PropTypes.number,
+    catState: PropTypes.array,
+    handleCatChange: PropTypes.func,
+};
+
+export default CatInputs.propTypes;
